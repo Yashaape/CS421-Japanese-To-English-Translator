@@ -39,12 +39,25 @@ bool word (string s)
   if (state == 2) return(true);  // end in a final state
    else return(false);
   */
+ return 0; // just for testing purposes
 }
 
 // PERIOD DFA 
-// Done by: **
+// Done by: Brandon Rasgaitis
 bool period (string s)
 {  // complete this **
+  int state = 0;
+  int charpos = 0;
+
+  while(s[charpos] != '\0'){
+    if (state == 0 && (s[charpos] == '.'))
+            state = 1;
+        else
+            return (false);
+        charpos++;
+  }
+  if (state == 1) return (true);
+  else return (false);
 }
 
 // ------ Three  Tables -------------------------------------
@@ -88,7 +101,7 @@ int scanner(tokentype& tt, string& w)
 
   4. Return the token type & string  (pass by reference)
   */
-
+ return 0; // for testing purposes 
 }//the end of scanner
 
 
@@ -115,7 +128,7 @@ int main()
                                    // the arguments  
        if (theword == "eofm") break;  // stop now
 
-       cout << "Type is:" << tokenName[thetype] << endl;
+       //cout << "Type is:" << tokenName[thetype] << endl;
        cout << "Word is:" << theword << endl;   
     }
 
