@@ -62,17 +62,20 @@ bool period (string s)
 
 // ------ Three  Tables -------------------------------------
 
-// TABLES Done by: **
+// TABLES Done by: *Sebastian Rojas*
 
 // ** Update the tokentype to be WORD1, WORD2, PERIOD, ERROR, EOFM, etc.
-enum tokentype {ERROR, };
+enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
 // ** For the display names of tokens - must be in the same order as the tokentype.
-string tokenName[30] = { }; 
+string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
 // ** Need the reservedwords table to be set up here. 
 // ** Do not require any file input for this. Hard code the table.
 // ** a.out should work without any additional files.
+
+//gonna do this later tmrw
+reservedwords[] = {}
 
 
 // ------------ Scanner and Driver ----------------------- 
@@ -81,13 +84,15 @@ ifstream fin;  // global stream for reading from the input file
 
 // Scanner processes only one word each time it is called
 // Gives back the token type and the word itself
-// ** Done by: 
+// ** Done by: Sebastian Rojas (just started with grabbing next word with fin)
 int scanner(tokentype& tt, string& w)
 {
 
   // ** Grab the next word from the file via fin
-  // 1. If it is eofm, return right now.   
-
+  // 1. If it is eofm, return right now.  
+	
+	fin >> w;
+	
   /*  **
   2. Call the token functions (word and period) 
      one after another (if-then-else).
