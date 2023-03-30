@@ -14,7 +14,7 @@ using namespace std;
 // WORD DFA 
 // Done by: Brandon Rasgaitis
 // RE:   **
-bool word(string s) {
+bool word(string s) { // check to see if this dfa matches our diagram
     int state = 0;
     int charpos = 0;
     //replace the following todo the word dfa  
