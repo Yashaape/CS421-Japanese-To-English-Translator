@@ -12,34 +12,182 @@ using namespace std;
 // --------- Two DFAs ---------------------------------
 
 // WORD DFA 
-// Done by: **
+// Done by: Brandon Rasgaitis
 // RE:   **
-bool word (string s)
-{
-
-  int state = 0;
-  int charpos = 0;
-  /* replace the following todo the word dfa  **
-  while (s[charpos] != '\0') 
-    {
-      if (state == 0 && s[charpos] == 'a')
-      state = 1;
-      else
-      if (state == 1 && s[charpos] == 'b')
-      state = 2;
-      else
-      if (state == 2 && s[charpos] == 'b')
-      state = 2;
-      else
-	  return(false);
-      charpos++;
-    }//end of while
-
-  // where did I end up????
-  if (state == 2) return(true);  // end in a final state
-   else return(false);
-  */
- return 0; // just for testing purposes
+bool word(string s) {
+    int state = 0;
+    int charpos = 0;
+    //replace the following todo the word dfa  
+    while (s[charpos] != '\0') {
+        switch (state) {
+            case 0:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                    case 'b':
+                    case 'g':
+                    case 'h':
+                    case 'k':
+                    case 'm':
+                    case 'n':
+                    case 'p':
+                    case 'r':
+                        state = 2;
+                        break;
+                    case 'c':
+                        state = 3;
+                        break;
+                    case 'd':
+                    case 'j':
+                    case 'w':
+                    case 'y':
+                    case 'z':
+                        state = 4;
+                        break;
+                    case 's':
+                        state = 5;
+                        break;
+                    case 't':
+                        state = 6;
+                        break;
+                }
+                break;
+            case 1:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                    case 'b':
+                    case 'g':
+                    case 'h':
+                    case 'k':
+                    case 'm':
+                    case 'p':
+                    case 'r':
+                        state = 2;
+                        break;
+                    case 'c':
+                        state = 3;
+                        break;
+                    case 'd':
+                    case 'j':
+                    case 'w':
+                    case 'y':
+                    case 'z':
+                        state = 4;
+                        break;
+                    case 's':
+                        state = 5;
+                        break;
+                    case 't':
+                        state = 6;
+                        break;
+                    case 'n':
+                        state = 7;
+                        break;
+                }
+                break;
+            case 2:
+                switch (s[charpos]) {
+                    case 'y':
+                        state = 4;
+                        break;
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                }
+                break;
+            case 3:
+                switch (s[charpos]) {
+                    case 'h':
+                        state = 4;
+                        break;
+                }
+                break;
+            case 4:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                }
+                break;
+            case 5:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                    case 'h':
+                        state = 4;
+                        break;
+                    case 's':
+                        state = 5;
+                        break;
+                }
+                break;
+            case 6:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                    case 's':
+                        state = 5;
+                        break;
+                }
+                break;
+            case 7:
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                    default:
+                        break;
+                }
+        }
+        charpos++;
+    }
+    if (state == 1 || state == 7) return (true);  // end in a final state
+    else return (false);
 }
 
 // PERIOD DFA 
@@ -75,7 +223,7 @@ string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", 
 // ** a.out should work without any additional files.
 
 //gonna do this later tmrw
-reservedwords[] = {}
+string reservedwords[] = {};
 
 
 // ------------ Scanner and Driver ----------------------- 
