@@ -222,10 +222,6 @@ string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", 
 // ** Do not require any file input for this. Hard code the table.
 // ** a.out should work without any additional files.
 
-<<<<<<< HEAD
-//gonna do this later tmrw
-string reservedwords[] = {};
-=======
 //table for the reserved words listed in the prompt
 string reservedwords[30][2] = {"masu", 
 			       "masen", 
@@ -270,7 +266,7 @@ tokentype reservedwordsT[30] = {
         CONNECTOR,
         EOFM
 };
->>>>>>> 1252529549a13cd978e3f131f4fb97ace6850b70
+
 
 
 // ------------ Scanner and Driver ----------------------- 
