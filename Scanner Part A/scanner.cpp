@@ -222,30 +222,32 @@ string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", 
 // ** Do not require any file input for this. Hard code the table.
 // ** a.out should work without any additional files.
 
-//table for the reserved words listed in the prompt
-string reservedwords[30][2] = {"masu", 
-			       "masen", 
-			       "mashita", 
-			       "masendeshita", 
-			       "desu", 
-			       "deshita", 
-			       "o", 
-			       "wa", 
-			       "ni", 
-			       "watashi", 
-			       "anata",
-			       "kare", 
-			       "kanojo", 
-			       "sore", 
-			       "mata", 
-			       "soshite", 
-			       "shikashi", 
-			       "dakara", 
-			       "eofm"
+//table with string values of the reserved words listed in the prompt
+string reservedWord[20][2] = {
+        {"masu",         ""},
+        {"masen",        ""},
+        {"mashita",      ""},
+        {"masendeshita", ""},
+        {"desu",         ""},
+        {"deshita",      ""},
+        {"o",            ""},
+        {"wa",           ""},
+        {"ni",           ""},
+        {"watashi",      ""},
+        {"anata",        ""},
+        {"kare",         ""},
+        {"kanojo",       ""},
+        {"sore",         ""},
+        {"mata",         ""},
+        {"soshite",     ""},
+        {"shikashi",   ""},
+        {"dakara", ""},
+        {"eofm" ""}
+
 };
 
-//table for the token types of the reserved words
-tokentype reservedwordsT[30] = {
+//table for the token types of the reserved words in the prompts
+tokentype reservedwordTT[20] = {
         VERB,
         VERBNEG,
         VERBPAST,
@@ -267,8 +269,6 @@ tokentype reservedwordsT[30] = {
         EOFM
 };
 
-
-
 // ------------ Scanner and Driver ----------------------- 
 
 ifstream fin;  // global stream for reading from the input file
@@ -281,8 +281,60 @@ int scanner(tokentype& tt, string& w)
 
   // ** Grab the next word from the file via fin
   // 1. If it is eofm, return right now.  
-	
-	fin >> w;
+
+  //grabs next word via fin
+  fin >> w;
+	  
+  bool reserve = false;                                                                                                      
+        
+  //if word is equal to "eofm" - EOFM (end of file marker), terminate                                                                                                          
+  if(w == "eofm")
+    {
+      return EOFM;
+    }
+
+   // calling (1/2) token function (period) to check if word is type PERIOD (.)                                                                                   
+   if(period(w))
+    {
+      tt = PERIOD;
+    }
+  // calling (2/2) token function (word) to check a words token type-(tt) using the table of reserved words                                                                                                         
+  else if(word(w))
+    {
+      //check all words(w) in the reservedword table to set tokentype(tt) in the reservedWordTT table
+      for(int i = 0; i < 20; i++)
+        {
+             if (w == reservedWord[i][0]) {
+                tt = reservedwordTT[i];
+                reserve = true;
+                break;
+            }
+        }  
+    
+    //condition statements generated when word(w) is not found as reserved, letting tokentype(tt) be WORD1/WORD2 based on last letter (I/E)                                                                                                          
+    if(!reserve)
+       {
+                                                                                                                                          
+         if(w[w.size() - 1] == 'I' || w[w.size() - 1] == 'E')
+           {                                                                                                                 
+             tt = WORD2; //when last letter in string is I
+           }
+
+         else
+           {
+                                                                                                                               
+             tt = WORD1; //when last letter in string is E
+            }
+        }
+  }
+
+  //else statement that generates a lexical error if both DFAs fail, letting tokentype(tt) be type ERROR                                                                                                      
+  else
+    {
+      cout << "\nLexical error: " << w << " is not a valid token\n";
+      tt = ERROR;
+    }
+
 	
   /*  **
   2. Call the token functions (word and period) 
@@ -297,7 +349,9 @@ int scanner(tokentype& tt, string& w)
 
   4. Return the token type & string  (pass by reference)
   */
+	
  return 0; // for testing purposes 
+	
 }//the end of scanner
 
 
