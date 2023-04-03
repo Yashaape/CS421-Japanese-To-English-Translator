@@ -13,7 +13,10 @@ using namespace std;
 
 // WORD DFA 
 // Done by: Brandon Rasgaitis
-// RE:   **
+// RE:   q0[^ndwxyj], N/A, qsa.*, qy.*, qt.*, qs.*, qc.*, q0.*, q0[^ndwxyj]*q1, qsa.*, q0q1.*, qtqsa.*, q0q1.*, qsqsa.*, qcqsa.*, q0q1.*, q0q1[^c]*, q0q1[^s]*, q0q1[^t]*, q0q1[^bhkmnpr]*,
+//       (q0|qy), 0, q0, qc, qs, qt, qy, qy, qsa
+//       *Each of these are the regular expressions for our transistion functions from our NFA to DFA diagram  
+// @param: s, checks each letter in a given word using switch statements for 7 cases inside a while loop.
 bool word(string s) { // check to see if this dfa matches our diagram
     int state = 0;
     int charpos = 0;
@@ -27,7 +30,7 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'i':
                     case 'o':
                     case 'u':
-                        state = 1;
+                        state = 1; //Nouns always are in state 1
                         break;
                     case 'b':
                     case 'g':
@@ -57,7 +60,7 @@ bool word(string s) { // check to see if this dfa matches our diagram
                         break;
                 }
                 break;
-            case 1:
+            case 1: // case E, and case I handle words that end in either E, or I
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -192,6 +195,7 @@ bool word(string s) { // check to see if this dfa matches our diagram
 
 // PERIOD DFA 
 // Done by: Brandon Rasgaitis
+// @param: s, reads in a '.' as a string and returns the correct state
 bool period (string s)
 {  // complete this **
   int state = 0;
@@ -202,15 +206,15 @@ bool period (string s)
             state = 1;
         else
             return (false);
-        charpos++;
-  }
+        charpos++; //end of if()
+  } // end of while
   if (state == 1) return (true);
   else return (false);
 }
 
 // ------ Three  Tables -------------------------------------
 
-// TABLES Done by: *Sebastian Rojas*
+// TABLES Done by: *Sebastian Rojas*, Alex Sandoval
 
 // ** Update the tokentype to be WORD1, WORD2, PERIOD, ERROR, EOFM, etc.
 enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
@@ -275,7 +279,9 @@ ifstream fin;  // global stream for reading from the input file
 
 // Scanner processes only one word each time it is called
 // Gives back the token type and the word itself
-// ** Done by: Sebastian Rojas (just started with grabbing next word with fin)
+// ** Done by: Sebastian Rojas (just started with grabbing next word with fin), Alex Sandoval
+// @param: tt, reads in the token type for a given word
+// @param: w, reads in the word for the associated token type
 int scanner(tokentype& tt, string& w)
 {
 
@@ -349,9 +355,7 @@ int scanner(tokentype& tt, string& w)
 
   4. Return the token type & string  (pass by reference)
   */
-	
  return 0; // for testing purposes 
-	
 }//the end of scanner
 
 
@@ -378,7 +382,7 @@ int main()
                                    // the arguments  
        if (theword == "eofm") break;  // stop now
 
-       //cout << "Type is:" << tokenName[thetype] << endl;
+       cout << "Type is:" << tokenName[thetype] << endl;
        cout << "Word is:" << theword << endl;   
     }
 

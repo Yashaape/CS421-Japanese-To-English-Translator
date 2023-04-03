@@ -1,26 +1,28 @@
 
 Fill this out and submit this with the executable.
 
-Group#:
+Group#: 26
 
 1.	Indicate who did what by giving names.
 Must have divided the work as specified by the assignment
 sheet. If the member did not fully contribute to the assigned part, 
 do not list his/her name!!!!!
-o	Member A tasks(DFA, tables, scanner)- who: 
-o	Member B tasks(DFA, tables, scanner)- who: 
-o	Member C tasks(word, period)- who: 
+o	Member A tasks(DFA, tables, scanner)- who: Sebastian Rojas, Alex
+o	Member B tasks(DFA, tables, scanner)- who: Sebastian Rojas, Alex
+o	Member C tasks(word, period)- who: Brandon Rasgaitis
 
-2.     Who came to the meeting to test everything together? 
+2.     Who came to the meeting to test everything together? Brandon Rasgaitis, Sebastian Rojas, Alex
 
-3.     You have included all the required comments? (RE and Done By): 
+3.     You have included all the required comments? (RE and Done By): Yes
 
-4.     Your program works correctly on scannertest1 and scannertest2? 
+4.     Your program works correctly on scannertest1 and scannertest2? Yes
 
 5.     Any other remarks.
        We have learned that the more time we dedicate, the better results we see. \
        Collaboration is good skill to apply when it comes to work in teams. 
 
+       Group worked well, each member did their job and helped out equally on the project,
+       more communication might've been better, however there were no issues. 
 
 checkIt_LK in 24 hours and immediately correct and re-submit.
 
