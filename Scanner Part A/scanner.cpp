@@ -23,14 +23,14 @@ bool word(string s) { // check to see if this dfa matches our diagram
     //replace the following todo the word dfa  
     while (s[charpos] != '\0') {
         switch (state) {
-            case 0:
+            case 0://q0
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
                     case 'i':
                     case 'o':
                     case 'u':
-                        state = 1; //Nouns always are in state 1
+                        state = 7; //q0q1
                         break;
                     case 'b':
                     case 'g':
@@ -40,27 +40,27 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'n':
                     case 'p':
                     case 'r':
-                        state = 2;
+                        state = 2;//Qy
                         break;
                     case 'c':
-                        state = 3;
+                        state = 3;//Qc
                         break;
                     case 'd':
                     case 'j':
                     case 'w':
                     case 'y':
                     case 'z':
-                        state = 4;
+                        state = 4;//Qsa
                         break;
                     case 's':
-                        state = 5;
+                        state = 5;//Qs
                         break;
                     case 't':
-                        state = 6;
+                        state = 6;//Qt
                         break;
                 }
                 break;
-            case 1: // case E, and case I handle words that end in either E, or I
+            case 1: //Q0Qy
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -69,7 +69,7 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 1;
+                        state = 1;//Q0
                         break;
                     case 'b':
                     case 'g':
@@ -78,53 +78,53 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'm':
                     case 'p':
                     case 'r':
-                        state = 2;
+                        state = 2;//Qy
                         break;
                     case 'c':
-                        state = 3;
+                        state = 3;//Qc
                         break;
                     case 'd':
                     case 'j':
                     case 'w':
                     case 'y':
                     case 'z':
-                        state = 4;
+                        state = 4;//Qsa
                         break;
                     case 's':
-                        state = 5;
+                        state = 5;//Qs
                         break;
                     case 't':
-                        state = 6;
+                        state = 6;//Qt
                         break;
                     case 'n':
+                        state = 1;//Q0Qy
+                        break;
+                }
+                break;
+            case 2://qy
+                switch (s[charpos]) {
+                    case 'y':
+                        state = 4;
+                        break;
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
                         state = 7;
                         break;
                 }
                 break;
-            case 2:
-                switch (s[charpos]) {
-                    case 'y':
-                        state = 4;
-                        break;
-                    case 'a':
-                    case 'e':
-                    case 'E':
-                    case 'i':
-                    case 'I':
-                    case 'o':
-                    case 'u':
-                        state = 1;
-                        break;
-                }
-                break;
-            case 3:
+            case 3://Qc
                 switch (s[charpos]) {
                     case 'h':
                         state = 4;
                         break;
                 }
                 break;
-            case 4:
+            case 4://Qsa
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -137,7 +137,7 @@ bool word(string s) { // check to see if this dfa matches our diagram
                         break;
                 }
                 break;
-            case 5:
+            case 5://Qs
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -146,17 +146,14 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 1;
+                        state = 7;
                         break;
                     case 'h':
                         state = 4;
                         break;
-                    case 's':
-                        state = 5;
-                        break;
                 }
                 break;
-            case 6:
+            case 6://qt
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -165,14 +162,14 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 1;
+                        state = 7;
                         break;
                     case 's':
-                        state = 5;
+                        state = 4;//Qsa
                         break;
                 }
                 break;
-            case 7:
+            case 7: //q0q1
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
@@ -181,7 +178,10 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 1;
+                        state = 7;
+                        break;
+                    case 'n':
+                        state = 1;//Q0Qy
                         break;
                     default:
                         break;
