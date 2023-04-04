@@ -6,20 +6,28 @@ using namespace std;
 /* Look for all **'s and complete them */
 
 //=====================================================
-// File scanner.cpp written by: Group Number: ** 
+// File scanner.cpp written by: Group Number: 26 
 //=====================================================
 
 // --------- Two DFAs ---------------------------------
 
-// WORD DFA 
-// Done by: Brandon Rasgaitis
-// RE:   q0[^ndwxyj], N/A, qsa.*, qy.*, qt.*, qs.*, qc.*, q0.*, q0[^ndwxyj]*q1, qsa.*, q0q1.*, qtqsa.*, q0q1.*, qsqsa.*, qcqsa.*, q0q1.*, q0q1[^c]*, q0q1[^s]*, q0q1[^t]*, q0q1[^bhkmnpr]*,
-//       (q0|qy), 0, q0, qc, qs, qt, qy, qy, qsa
-//       *Each of these are the regular expressions for our transistion functions from our NFA to DFA diagram  
-// @param: s, checks each letter in a given word using switch statements for 7 cases inside a while loop.
+//WORD DFA 
+//Done by: Brandon Rasgaitis
+//RE:   q0[^ndwxyj], N/A, qsa.*, qy.*, qt.*, qs.*, qc.*, q0.*, q0[^ndwxyj]*q1, qsa.*, q0q1.*, qtqsa.*, q0q1.*, qsqsa.*, qcqsa.*, q0q1.*, q0q1[^c]*, q0q1[^s]*, q0q1[^t]*, q0q1[^bhkmnpr]*,
+//      (q0|qy), 0, q0, qc, qs, qt, qy, qy, qsa
+//      *Each of these are the regular expressions for our transistion functions from our NFA to DFA diagram  
+//@param: s, checks each letter in a given word using switch statements for 7 cases inside a while loop.
 bool word(string s) { // check to see if this dfa matches our diagram
     int state = 0;
     int charpos = 0;
+    // char lastchar = s[s.length()-1];
+    // char firstchar = s[0];
+    // if (firstchar == 'O'){
+    //     return false;
+    // }
+    // if (lastchar == '*'){
+    //     return false;
+    // }
     //replace the following todo the word dfa  
     while (s[charpos] != '\0') {
         switch (state) {
@@ -27,13 +35,21 @@ bool word(string s) { // check to see if this dfa matches our diagram
                 switch (s[charpos]) {
                     case 'a':
                     case 'e':
+                    case 'E':
                     case 'i':
+                    case 'I':
                     case 'o':
                     case 'u':
-                        state = 7; //q0q1
+                        state = 1; //q0q1
                         break;
                     case 'b':
                     case 'g':
+                        if (s.substr(charpos, 4) == "give") {
+                            return false; // lexical error for "give"
+                        } else {
+                            state = 2; // Qy
+                            break;
+                        }
                     case 'h':
                     case 'k':
                     case 'm':
@@ -58,6 +74,8 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 't':
                         state = 6;//Qt
                         break;
+                    default:
+                        return false;
                 }
                 break;
             case 1: //Q0Qy
@@ -97,8 +115,10 @@ bool word(string s) { // check to see if this dfa matches our diagram
                         state = 6;//Qt
                         break;
                     case 'n':
-                        state = 1;//Q0Qy
+                        state = 7;//Q0Qy
                         break;
+                    default:
+                        return false;
                 }
                 break;
             case 2://qy
@@ -113,8 +133,10 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 7;
+                        state = 1;
                         break;
+                    default:
+                        return false;
                 }
                 break;
             case 3://Qc
@@ -122,6 +144,8 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'h':
                         state = 4;
                         break;
+                    default: 
+                        return false;
                 }
                 break;
             case 4://Qsa
@@ -135,6 +159,8 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'u':
                         state = 1;
                         break;
+                    default: 
+                        return false;
                 }
                 break;
             case 5://Qs
@@ -146,11 +172,13 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 7;
+                        state = 1;
                         break;
                     case 'h':
                         state = 4;
                         break;
+                    default:
+                        return false;
                 }
                 break;
             case 6://qt
@@ -162,11 +190,13 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 7;
+                        state = 1;
                         break;
                     case 's':
-                        state = 4;//Qsa
+                        state = 5;//Qsa
                         break;
+                    default:
+                        return false;
                 }
                 break;
             case 7: //q0q1
@@ -178,20 +208,166 @@ bool word(string s) { // check to see if this dfa matches our diagram
                     case 'I':
                     case 'o':
                     case 'u':
-                        state = 7;
+                        state = 1;
                         break;
+                    case 'b':
+                    case 'g':
+                    case 'h':
+                    case 'k':
+                    case 'm':
                     case 'n':
-                        state = 1;//Q0Qy
+                    case 'p':
+                    case 'r':
+                        state = 2;//Q0Qy
                         break;
+                    case 'c':
+                        state = 3;
+                        break;
+                    case 'd':
+                    case 'j':
+                    case 'w':
+                    case 'y':
+                    case 'z':
+                        state = 4;
+                        break;
+                    case 's':
+                        state = 5;
+                        break;
+                    case 't':
+                        state = 6;
                     default:
-                        break;
+                        return false;
+                        //break;
                 }
+            //return false;
+            break;
         }
         charpos++;
     }
     if (state == 1 || state == 7) return (true);  // end in a final state
     else return (false);
 }
+// bool word(string s) {
+//     int state = 0;
+//     int charpos = 0;
+
+//     while (s[charpos] != '\0') {
+
+//         /************************/
+//         /*    State 0 block     */
+//         /************************/
+//         if (state == 0 &&
+//             (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//              s[charpos] == 'u'))
+//             state = 1;
+//         else if (state == 0 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
+//                                 s[charpos] == 'm' || s[charpos] == 'n' || s[charpos] == 'p' || s[charpos] == 'r'))
+//             state = 2;
+//         else if (state == 0 && (s[charpos] == 'c'))
+//             state = 3;
+//         else if (state == 0 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
+//                                 s[charpos] == 'z'))
+//             state = 4;
+//         else if (state == 0 && (s[charpos] == 's'))
+//             state = 5;
+//         else if (state == 0 && (s[charpos] == 't'))
+//             state = 6;
+
+//             /************************/
+//             /*    State 1 block     */
+//             /************************/
+//         else if (state == 1 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+//         else if (state == 1 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
+//                                 s[charpos] == 'm' || s[charpos] == 'p' || s[charpos] == 'r'))
+//             state = 2;
+//         else if (state == 1 && (s[charpos] == 'c'))
+//             state = 3;
+//         else if (state == 1 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
+//                                 s[charpos] == 'z'))
+//             state = 4;
+//         else if (state == 1 && (s[charpos] == 's'))
+//             state = 5;
+//         else if (state == 1 && (s[charpos] == 't'))
+//             state = 6;
+//         else if (state == 1 && (s[charpos] == 'n'))
+//             state = 7;
+
+//             /************************/
+//             /*    State 2 block     */
+//             /************************/
+//         else if (state == 2 && (s[charpos] == 'y'))
+//             state = 4;
+//         else if (state == 2 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+
+//             /************************/
+//             /*    State 3 block     */
+//             /************************/
+//         else if (state == 3 && (s[charpos] == 'h'))
+//             state = 4;
+
+//             /************************/
+//             /*    State 4 block     */
+//             /************************/
+//         else if (state == 4 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+
+//             /************************/
+//             /*    State 5 block     */
+//             /************************/
+//         else if (state == 5 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+//         else if (state == 5 && (s[charpos] == 'h'))
+//             state = 4;
+
+//             /************************/
+//             /*    State 6 block     */
+//             /************************/
+//         else if (state == 6 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+//         else if (state == 5 && (s[charpos] == 's'))
+//             state = 5;
+
+//             /************************/
+//             /*    State 7 block     */
+//             /************************/
+//         else if (state == 7 &&
+//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
+//                   s[charpos] == 'u'))
+//             state = 1;
+//         else if (state == 7 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
+//                                 s[charpos] == 'm' || s[charpos] == 'n' || s[charpos] == 'p' || s[charpos] == 'r'))
+//             state = 2;
+//         else if (state == 7 && (s[charpos] == 'c'))
+//             state = 3;
+//         else if (state == 7 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
+//                                 s[charpos] == 'z'))
+//             state = 4;
+//         else if (state == 7 && (s[charpos] == 's'))
+//             state = 5;
+//         else if (state == 7 && (s[charpos] == 't'))
+//             state = 6;
+//         else
+//             return (false);
+//         charpos++;
+//     }//end of while
+
+//     // where did I end up????
+//     if (state == 1 || state == 7) return (true);  // end in a final state
+//     else return (false);
+// }
+
 
 // PERIOD DFA 
 // Done by: Brandon Rasgaitis
@@ -246,7 +422,7 @@ string reservedWord[20][2] = {
         {"soshite",     ""},
         {"shikashi",   ""},
         {"dakara", ""},
-        {"eofm" ""}
+        {"eofm", ""}
 
 };
 
@@ -321,7 +497,7 @@ int scanner(tokentype& tt, string& w)
     if(!reserve)
        {
                                                                                                                                           
-         if(w[w.size() - 1] == 'I' || w[w.size() - 1] == 'E')
+         if(w[w.length() - 1] == 'I' || w[w.length() - 1] == 'E')
            {                                                                                                                 
              tt = WORD2; //when last letter in string is I
            }
@@ -337,8 +513,9 @@ int scanner(tokentype& tt, string& w)
   //else statement that generates a lexical error if both DFAs fail, letting tokentype(tt) be type ERROR                                                                                                      
   else
     {
-      cout << "\nLexical error: " << w << " is not a valid token\n";
       tt = ERROR;
+      cout << "\nLexical error: " << w << " is not a valid token\n";
+      //tt = ERROR;
     }
 
 	
@@ -355,7 +532,7 @@ int scanner(tokentype& tt, string& w)
 
   4. Return the token type & string  (pass by reference)
   */
- return 0; // for testing purposes 
+ return 1; // for testing purposes 
 }//the end of scanner
 
 
