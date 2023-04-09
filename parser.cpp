@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-//#include"scanner.h"
 using namespace std;
 
 /* INSTRUCTION:  Complete all ** parts.
