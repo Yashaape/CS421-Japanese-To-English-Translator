@@ -247,126 +247,6 @@ bool word(string s) { // check to see if this dfa matches our diagram
     if (state == 1 || state == 7) return (true);  // end in a final state
     else return (false);
 }
-// bool word(string s) {
-//     int state = 0;
-//     int charpos = 0;
-
-//     while (s[charpos] != '\0') {
-
-//         /************************/
-//         /*    State 0 block     */
-//         /************************/
-//         if (state == 0 &&
-//             (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//              s[charpos] == 'u'))
-//             state = 1;
-//         else if (state == 0 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
-//                                 s[charpos] == 'm' || s[charpos] == 'n' || s[charpos] == 'p' || s[charpos] == 'r'))
-//             state = 2;
-//         else if (state == 0 && (s[charpos] == 'c'))
-//             state = 3;
-//         else if (state == 0 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
-//                                 s[charpos] == 'z'))
-//             state = 4;
-//         else if (state == 0 && (s[charpos] == 's'))
-//             state = 5;
-//         else if (state == 0 && (s[charpos] == 't'))
-//             state = 6;
-
-//             /************************/
-//             /*    State 1 block     */
-//             /************************/
-//         else if (state == 1 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-//         else if (state == 1 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
-//                                 s[charpos] == 'm' || s[charpos] == 'p' || s[charpos] == 'r'))
-//             state = 2;
-//         else if (state == 1 && (s[charpos] == 'c'))
-//             state = 3;
-//         else if (state == 1 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
-//                                 s[charpos] == 'z'))
-//             state = 4;
-//         else if (state == 1 && (s[charpos] == 's'))
-//             state = 5;
-//         else if (state == 1 && (s[charpos] == 't'))
-//             state = 6;
-//         else if (state == 1 && (s[charpos] == 'n'))
-//             state = 7;
-
-//             /************************/
-//             /*    State 2 block     */
-//             /************************/
-//         else if (state == 2 && (s[charpos] == 'y'))
-//             state = 4;
-//         else if (state == 2 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-
-//             /************************/
-//             /*    State 3 block     */
-//             /************************/
-//         else if (state == 3 && (s[charpos] == 'h'))
-//             state = 4;
-
-//             /************************/
-//             /*    State 4 block     */
-//             /************************/
-//         else if (state == 4 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-
-//             /************************/
-//             /*    State 5 block     */
-//             /************************/
-//         else if (state == 5 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-//         else if (state == 5 && (s[charpos] == 'h'))
-//             state = 4;
-
-//             /************************/
-//             /*    State 6 block     */
-//             /************************/
-//         else if (state == 6 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-//         else if (state == 5 && (s[charpos] == 's'))
-//             state = 5;
-
-//             /************************/
-//             /*    State 7 block     */
-//             /************************/
-//         else if (state == 7 &&
-//                  (s[charpos] == 'a' || tolower(s[charpos]) == 'e' || tolower(s[charpos]) == 'i' || s[charpos] == 'o' ||
-//                   s[charpos] == 'u'))
-//             state = 1;
-//         else if (state == 7 && (s[charpos] == 'b' || s[charpos] == 'g' || s[charpos] == 'h' || s[charpos] == 'k' ||
-//                                 s[charpos] == 'm' || s[charpos] == 'n' || s[charpos] == 'p' || s[charpos] == 'r'))
-//             state = 2;
-//         else if (state == 7 && (s[charpos] == 'c'))
-//             state = 3;
-//         else if (state == 7 && (s[charpos] == 'd' || s[charpos] == 'j' || s[charpos] == 'w' || s[charpos] == 'y' ||
-//                                 s[charpos] == 'z'))
-//             state = 4;
-//         else if (state == 7 && (s[charpos] == 's'))
-//             state = 5;
-//         else if (state == 7 && (s[charpos] == 't'))
-//             state = 6;
-//         else
-//             return (false);
-//         charpos++;
-//     }//end of while
-
-//     // where did I end up????
-//     if (state == 1 || state == 7) return (true);  // end in a final state
-//     else return (false);
-// }
 
 
 // PERIOD DFA 
@@ -396,14 +276,14 @@ bool period (string s)
 enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
 // ** For the display names of tokens - must be in the same order as the tokentype.
-string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
+extern string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
 // ** Need the reservedwords table to be set up here. 
 // ** Do not require any file input for this. Hard code the table.
 // ** a.out should work without any additional files.
 
 //table with string values of the reserved words listed in the prompt
-string reservedWord[20][2] = {
+extern string reservedWord[20][2] = {
         {"masu",         ""},
         {"masen",        ""},
         {"mashita",      ""},
@@ -427,7 +307,7 @@ string reservedWord[20][2] = {
 };
 
 //table for the token types of the reserved words in the prompts
-tokentype reservedwordTT[20] = {
+extern tokentype reservedwordTT[20] = {
         VERB,
         VERBNEG,
         VERBPAST,
