@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include "scanner.h"
 using namespace std;
 
 /* Look for all **'s and complete them */
@@ -8,7 +9,51 @@ using namespace std;
 //=====================================================
 // File scanner.cpp written by: Group Number: 26 
 //=====================================================
+//enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
+string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
+string reservedWord[20][2] = {
+        {"masu",         ""},
+        {"masen",        ""},
+        {"mashita",      ""},
+        {"masendeshita", ""},
+        {"desu",         ""},
+        {"deshita",      ""},
+        {"o",            ""},
+        {"wa",           ""},
+        {"ni",           ""},
+        {"watashi",      ""},
+        {"anata",        ""},
+        {"kare",         ""},
+        {"kanojo",       ""},
+        {"sore",         ""},
+        {"mata",         ""},
+        {"soshite",     ""},
+        {"shikashi",   ""},
+        {"dakara", ""},
+        {"eofm", ""}
 
+};
+tokentype reservedwordTT[20] = {
+        VERB,
+        VERBNEG,
+        VERBPAST,
+        VERBPASTNEG,
+        IS,
+        WAS,
+        OBJECT,
+        SUBJECT,
+        DESTINATION,
+        PRONOUN,
+        PRONOUN,
+        PRONOUN,
+        PRONOUN,
+        PRONOUN,
+        CONNECTOR,
+        CONNECTOR,
+        CONNECTOR,
+        CONNECTOR,
+        EOFM
+};
 // --------- Two DFAs ---------------------------------
 
 //WORD DFA 
@@ -273,65 +318,65 @@ bool period (string s)
 // TABLES Done by: *Sebastian Rojas*, Alex Sandoval
 
 // ** Update the tokentype to be WORD1, WORD2, PERIOD, ERROR, EOFM, etc.
-enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
+//enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 
 // ** For the display names of tokens - must be in the same order as the tokentype.
-extern string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
+//string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
 
 // ** Need the reservedwords table to be set up here. 
 // ** Do not require any file input for this. Hard code the table.
 // ** a.out should work without any additional files.
 
 //table with string values of the reserved words listed in the prompt
-extern string reservedWord[20][2] = {
-        {"masu",         ""},
-        {"masen",        ""},
-        {"mashita",      ""},
-        {"masendeshita", ""},
-        {"desu",         ""},
-        {"deshita",      ""},
-        {"o",            ""},
-        {"wa",           ""},
-        {"ni",           ""},
-        {"watashi",      ""},
-        {"anata",        ""},
-        {"kare",         ""},
-        {"kanojo",       ""},
-        {"sore",         ""},
-        {"mata",         ""},
-        {"soshite",     ""},
-        {"shikashi",   ""},
-        {"dakara", ""},
-        {"eofm", ""}
+//  string reservedWord[20][2] = {
+//         {"masu",         ""},
+//         {"masen",        ""},
+//         {"mashita",      ""},
+//         {"masendeshita", ""},
+//         {"desu",         ""},
+//         {"deshita",      ""},
+//         {"o",            ""},
+//         {"wa",           ""},
+//         {"ni",           ""},
+//         {"watashi",      ""},
+//         {"anata",        ""},
+//         {"kare",         ""},
+//         {"kanojo",       ""},
+//         {"sore",         ""},
+//         {"mata",         ""},
+//         {"soshite",     ""},
+//         {"shikashi",   ""},
+//         {"dakara", ""},
+//         {"eofm", ""}
 
-};
+// };
 
 //table for the token types of the reserved words in the prompts
-extern tokentype reservedwordTT[20] = {
-        VERB,
-        VERBNEG,
-        VERBPAST,
-        VERBPASTNEG,
-        IS,
-        WAS,
-        OBJECT,
-        SUBJECT,
-        DESTINATION,
-        PRONOUN,
-        PRONOUN,
-        PRONOUN,
-        PRONOUN,
-        PRONOUN,
-        CONNECTOR,
-        CONNECTOR,
-        CONNECTOR,
-        CONNECTOR,
-        EOFM
-};
+//  tokentype reservedwordTT[20] = {
+//         VERB,
+//         VERBNEG,
+//         VERBPAST,
+//         VERBPASTNEG,
+//         IS,
+//         WAS,
+//         OBJECT,
+//         SUBJECT,
+//         DESTINATION,
+//         PRONOUN,
+//         PRONOUN,
+//         PRONOUN,
+//         PRONOUN,
+//         PRONOUN,
+//         CONNECTOR,
+//         CONNECTOR,
+//         CONNECTOR,
+//         CONNECTOR,
+//         EOFM
+// };
 
 // ------------ Scanner and Driver ----------------------- 
 
-ifstream fin;  // global stream for reading from the input file
+std::ifstream fin;  // global stream for reading from the input file
 
 // Scanner processes only one word each time it is called
 // Gives back the token type and the word itself
@@ -421,30 +466,30 @@ int scanner(tokentype& tt, string& w)
 // This will go away after this assignment
 // DO NOT CHANGE THIS!!!!!! 
 // Done by:  Louis
-int main()
-{
-  tokentype thetype;
-  string theword; 
-  string filename;
+// int main()
+// {
+//   tokentype thetype;
+//   string theword; 
+//   string filename;
 
-  cout << "Enter the input file name: ";
-  cin >> filename;
+//   cout << "Enter the input file name: ";
+//   cin >> filename;
 
-  fin.open(filename.c_str());
+//   fin.open(filename.c_str());
 
-  // the loop continues until eofm is returned.
-   while (true)
-    {
-       scanner(thetype, theword);  // call the scanner which sets
-                                   // the arguments  
-       if (theword == "eofm") break;  // stop now
+//   // the loop continues until eofm is returned.
+//    while (true)
+//     {
+//        scanner(thetype, theword);  // call the scanner which sets
+//                                    // the arguments  
+//        if (theword == "eofm") break;  // stop now
 
-       cout << "Type is:" << tokenName[thetype] << endl;
-       cout << "Word is:" << theword << endl;   
-    }
+//        cout << "Type is:" << tokenName[thetype] << endl;
+//        cout << "Word is:" << theword << endl;   
+//     }
 
-   cout << "End of file is encountered." << endl;
-   fin.close();
+//    cout << "End of file is encountered." << endl;
+//    fin.close();
 
-}// end
+// }// end
 

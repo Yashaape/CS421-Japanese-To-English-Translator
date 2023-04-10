@@ -22,9 +22,9 @@ using namespace std;
 // ----- Four Utility Functions and Globals -----------------------------------
 //Global Variable:
 
-extern string reservedWords;
-extern tokentype reservedWordsType;
-extern string tokenName;
+// extern string reservedWords;
+// extern tokentype reservedWordsTT;
+// extern string tokenName;
 bool token_available;
 string saved_lexme;
 tokentype saved_token; 
@@ -36,14 +36,18 @@ bool error2 = false;
 //    to display syntax error messages as specified by me.  
 
 // Type of error: **
-// Done by: ** 
-void syntaxerror1(string s, tokentype token){
-
+// Done by: Brandon Rasgaitis 
+void syntaxerror1(tokentype token, string s){
+   cout << "SYNTAX ERROR: unexpected " << tokenName[token] << " but found " << s << endl;
+   error1 = true;
+   exit(1);
 }
 // Type of error: **
-// Done by: ** 
-void syntaxerror2(string s){
-
+// Done by: Brandon Rasgaitis 
+void syntaxerror2(string sl, string func){ //note: in other functions such as AfterNoun() type in "AfterNoun()" as parameter
+   cout << "SYNTAX ERROR: unexpected " << sl << " found in parser function " << func << endl;
+   error2 = true;
+   exit(1);
 }
 
 // ** Need the updated match and next_token with 2 global vars
@@ -57,7 +61,7 @@ tokentype next_token(){
       token_available = true;
 
       if(saved_token == ERROR){
-         syntaxerror1(saved_lexme, saved_token);
+         syntaxerror1(saved_token, saved_lexme);
       }
       token_available = true;
    }
@@ -68,7 +72,7 @@ tokentype next_token(){
 // Done by: Brandon Rasgaitis
 bool match(tokentype expected){
    if(next_token() != expected){
-      syntaxerror2(saved_lexme); //not sure if saved_token should also be passed in as a parameter
+      syntaxerror2(saved_lexme, "match()"); //not sure if saved_token should also be passed in as a parameter
       return false; // no match, error
    }
    else{ // match has occured 
@@ -77,30 +81,67 @@ bool match(tokentype expected){
    }
 }
 
-// ----- RDP functions - one per non-term -------------------
+// ----- RDP functions - one per non-term ------------------- 
 
 // ** Make each non-terminal into a function here
 // ** Be sure to put the corresponding grammar rule above each function
 // ** Be sure to put the name of the programmer above each function
-
+// Note: each terminal function might need to be renamed based on left factoring submission
 // Grammar: **
 // Done by: **
 
-string filename;
-ifstream fin;
+void S(){
+   cout << "Processing <S()>" << endl;
+}
+
+void Story(){ 
+   cout << "Processing <Story()>" << endl;
+   S();
+}
+
+void AfterSubject(){
+   cout << "Processing <AfterSubject()>" << endl;
+}
+
+void AfterNoun(){
+   cout << "Processing <AfterNoun()>" << endl;
+}
+
+void AfterObject(){
+   cout << "Processing <AfterObject()>" << endl;
+}
+
+void Noun(){
+   cout << "Processing <Noun()>" << endl;
+}
+
+void Verb(){
+   cout << "Processing <Verb()>" << endl;
+}
+
+void Be(){
+   cout << "Processing <Be()>" << endl;
+}
+
+void Tense(){
+   cout << "Processing <Tense()>" << endl;
+}
 //----------- Driver ---------------------------
+string filename;
+extern ifstream fin;
 
 // The new test driver to start the parser
 // Done by:  **
-int main()
-{
+int main(){
   cout << "Enter the input file name: ";
   cin >> filename;
   fin.open(filename.c_str());
 
   //** calls the <story> to start parsing
+  Story();
+  cout << endl;
   //** closes the input file 
-
+  fin.close();
 }// end
 //** require no other input files!
 //** syntax error EC requires producing errors.txt of error messages
