@@ -76,9 +76,9 @@ tokentype next_token(){
       token_available = true;
       cout << "Scanner called using word: " << saved_lexme << endl;
       if(saved_token == ERROR){
-         syntaxerror1(saved_token, saved_lexme);
+         //syntaxerror1(saved_token, saved_lexme);
+         return saved_token;
       }
-      token_available = true;
    }
    return saved_token;
 }
@@ -87,8 +87,10 @@ tokentype next_token(){
 // Done by: Brandon Rasgaitis
 bool match(tokentype expected){
    if(next_token() != expected){
-      syntaxerror2(saved_lexme, "match()"); //not sure if saved_token should also be passed in as a parameter
-      return false; // no match, error
+      //syntaxerror2(saved_lexme, tokenName[expected]); //not sure if saved_token should also be passed in as a parameter
+      syntaxerror1(expected, saved_lexme);
+      scanner(saved_token, saved_lexme);
+      return match(saved_token); // no match, error
    }
    else{ // match has occured 
       token_available = false; //eat up the token
