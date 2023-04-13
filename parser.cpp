@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string>
 #include "scanner.h"
+#include "parser.h"
 using namespace std;
 
 /* INSTRUCTION:  Complete all ** parts.
@@ -22,30 +23,11 @@ using namespace std;
 // ----- Four Utility Functions and Globals -----------------------------------
 //Global Variable:
 
-// extern string reservedWords;
-// extern tokentype reservedWordsTT;
-// extern string tokenName;
 bool token_available;
 string saved_lexme;
 tokentype saved_token; 
 bool error1 = false;
 bool error2 = false;
-tokentype next_token();
-bool word(string s);
-bool period(string s);
-int scanner(tokentype &a, string &w);
-bool match(tokentype expected);
-void Story();
-void S();
-void AfterSubject();
-void AfterNoun();
-void AfterObject();
-void Noun();
-void Verb();
-void Be();
-void Tense();
-void syntaxerror1(tokentype, string);
-void syntaxerror2(string, string);
 
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 //    to display syntax error messages as specified by me.  
@@ -113,12 +95,10 @@ void S(){
    if(next_token() == CONNECTOR){
       match(CONNECTOR);
       cout << "Matched: " << tokenName[CONNECTOR] << endl;
-      //cout << "Matched: CONNECTOR" << endl;
    }
    Noun();
    match(SUBJECT);
    cout << "Matched: " << tokenName[SUBJECT] << endl;
-   //cout << "Matched: SUBJECT" << endl;
    AfterSubject();
 }
 
