@@ -231,7 +231,7 @@ void Be(){
          cout << "Matched: " << tokenName[WAS] << endl;
          break;
       default: 
-         syntaxerror2(saved_lexme, "BE");
+         syntaxerror2(saved_lexme, "Be");
    }
 }
 
@@ -256,7 +256,7 @@ void Tense(){
       cout << "Matched: " << tokenName[VERBNEG] << endl;
       break;
    default: 
-      syntaxerror2(saved_lexme, "<TENSE>");
+      syntaxerror2(saved_lexme, "<Tense>");
    }
 }
 //----------- Driver ---------------------------
