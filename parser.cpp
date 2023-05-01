@@ -15,7 +15,7 @@ using namespace std;
 */
 
 //=================================================
-// File parser.cpp written by Group Number: **
+// File parser.cpp written by Group Number: 26
 //=================================================
 //extern enum tokentype;
 
@@ -32,14 +32,14 @@ bool error2 = false;
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 //    to display syntax error messages as specified by me.  
 
-// Type of error: **
+// Type of error: Expected Token but found "token" instead
 // Done by: Brandon Rasgaitis 
 void syntaxerror1(tokentype token, string s){
    cout << "SYNTAX ERROR: Expected " << tokenName[token] << " but found " << s << endl;
    error1 = true;
    exit(1);
 }
-// Type of error: **
+// Type of error: Unexpected Token 
 // Done by: Brandon Rasgaitis 
 void syntaxerror2(string sl, string func){ //note: in other functions such as AfterNoun() type in "AfterNoun()" as parameter
    cout << "SYNTAX ERROR: unexpected " << sl << " found in parser function " << func << endl;
@@ -50,8 +50,8 @@ void syntaxerror2(string sl, string func){ //note: in other functions such as Af
 // ** Need the updated match and next_token with 2 global vars
 // saved_token and saved_lexeme
 
-// Purpose: **
-// Done by: Brandon Rasgaitis
+// Purpose: Used to look ahead one token to see what the scanner would return next. Decides production rules.
+// Done by: Alex Sandoval
 tokentype next_token(){
    if(!token_available){
       scanner(saved_token, saved_lexme);
@@ -65,8 +65,8 @@ tokentype next_token(){
    return saved_token;
 }
 
-// Purpose: **
-// Done by: Brandon Rasgaitis
+// Purpose: Used to get the next scanner token. If token matches, match succeeds, other wise perform Syntax error handling 
+// Done by: Alex Sandoval
 bool match(tokentype expected){
    if(next_token() != expected){
       //syntaxerror2(saved_lexme, tokenName[expected]); //not sure if saved_token should also be passed in as a parameter
@@ -86,8 +86,8 @@ bool match(tokentype expected){
 // ** Be sure to put the corresponding grammar rule above each function
 // ** Be sure to put the name of the programmer above each function
 // Note: each terminal function might need to be renamed based on left factoring submission
-// Grammar: **
-// Done by: **
+// Grammar: <s> ::= [CONNECTOR] <noun> SUBJECT <after subject>
+// Done by: Sebastian Rojas, Brandon Rasgaitis
 
 void S(){
    cout << endl;
@@ -102,6 +102,8 @@ void S(){
    AfterSubject();
 }
 
+// Grammar:
+// Done by: Brandon Rasgaitis
 void Story(){ //statement_list() from notes 
    cout << endl;
    cout << "Processing <Story()>" << endl;
@@ -118,7 +120,8 @@ void Story(){ //statement_list() from notes
       }
    }
 }
-
+// Grammar: <after subject> ::= <verb> <tense> PERIOD | <noun> <after noun>
+// Done by: Brandon Rasgaitis
 void AfterSubject(){
    cout << endl;
    cout << "Processing <AfterSubject()>" << endl;
@@ -141,7 +144,8 @@ void AfterSubject(){
          syntaxerror2(saved_lexme, "<After Subject>");
    }
 }
-
+// Grammar: <after noun> ::= <be> PERIOD | DESTINATION <verb> <tense> PERIOD| OBJECT <after object>
+// Done by: Brandon Rasgaitis
 void AfterNoun(){
    cout << endl;
    cout << "Processing <AfterNoun()>" << endl;
@@ -170,6 +174,8 @@ void AfterNoun(){
    }
 }
 
+// Grammar: <after object> ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD
+// Done by: Sebastian Rojas
 void AfterObject(){
    cout << endl;
    cout << "Processing <AfterObject()>" << endl;
@@ -195,6 +201,8 @@ void AfterObject(){
    }
 }
 
+// Grammar: <noun>  ::= WORD1 | PRONOUN
+// Done by: Sebastian Rojas
 void Noun(){
    cout << endl;
    cout << "Processing <Noun()>" << endl;
@@ -211,6 +219,8 @@ void Noun(){
    }
 }
 
+// Grammar: <verb>  ::= WORD2
+// Done by: Sebastian Rojas
 void Verb(){
    cout << endl;
    cout << "Processing <Verb()>" << endl;
@@ -218,6 +228,8 @@ void Verb(){
    cout << "Matched: " << tokenName[WORD2] << endl;
 }
 
+// Grammar: <be>  ::= IS | WAS
+// Done by: Sebastian Rojas
 void Be(){
    cout << endl;
    cout << "Processing <Be()>" << endl;
@@ -235,6 +247,8 @@ void Be(){
    }
 }
 
+// Grammar: <tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG 
+// Done by: Sebastian Rojas
 void Tense(){
    cout << endl;
    cout << "Processing <Tense()>" << endl;
@@ -264,7 +278,7 @@ string filename;
 extern ifstream fin;
 
 // The new test driver to start the parser
-// Done by:  **
+// Done by:  Sebastian Rojas
 int main(){
    cout << "Enter the input file name: ";
    cin >> filename;

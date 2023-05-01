@@ -1,30 +1,39 @@
 
 Fill this out and submitIt_LK this file with the executable.
 
-Group#:
+Group#: 26
 
 Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who:
-  Member B tasks (match and next_token)- who:
-  Member C tasks (main()) who:
+  Member A tasks (syntax error functions) - who: Brandon Rasgaitis
+  Member B tasks (match and next_token)- who: Alex Sandoval
+  Member C tasks (main()) who: Sebastian Rojas
   Who wrote which parser functions? 
   functions             who
   ----------------      ----------
+    void S()            Brandon Rasgaitis
+    void Story()        Brandon Rasgaitis
+    void AfterSubject() Brandon Rasgaitis
+    void AfterNoun()    Bradnon Rasgaitis 
+    void AfterObject()  Sebastian Rojas
+    void Noun()         Sebastian Rojas
+    void Verb()         Sebastian Rojas
+    void Be()           Sebastian Rojas
+    void Tense()        Sebastian Rojas
 
-2.  Who came to the meeting to test the program together?
+2.  Who came to the meeting to test the program together? Brandon Rasgaitis, Sebastian Rojas, Alex Sandoval
 
 3.  You have included all the required comments? 
-    (Grammer: and Done by: )
+    (Grammer: and Done by: ) Yes
 
 4.  The parser produced correct output for 
-    all 6 test cases?
+    all 6 test cases? Correct
 
 5.  What extra credit feature did you include?
     If it is error correction, did you make sure errors.txt
-    got produced?
+    got produced? N/A
     [ You may still do EC later ]
         
 checkIt_LK in 24 hours and immediately correct and resubmit.     
