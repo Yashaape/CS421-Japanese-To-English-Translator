@@ -1,0 +1,323 @@
+Script started on Mon 01 May 2023 02:01:05 PM PDT
+]0;rasga001@empress:~/cs421Progs/ParserFiles[?1034h[rasga001@empress ParserFiles]$ g++ parser.cpp scanner.cpp -o group26parser.out
+[01m[Kparser.cpp:[m[K In function ‘[01m[Kvoid syntaxerror1(tokentype, std::string)[m[K’:
+[01m[Kparser.cpp:40:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kexit[m[K’ was not declared in this scope
+    exit(1);
+[01;32m[K          ^[m[K
+[01m[Kparser.cpp:[m[K In function ‘[01m[Kvoid syntaxerror2(std::string, std::string)[m[K’:
+[01m[Kparser.cpp:47:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kexit[m[K’ was not declared in this scope
+    exit(1);
+[01;32m[K          ^[m[K
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ g++ -std=c+11 parser.cpp scanner.cpp -o group26parser.out
+g++: error: unrecognized command line option ‘-std=c+11’
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ g++ -std=c+11 parser.cpp scanner.cpp -o group26parser.o[1@+
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ls
+correctoutput1  [0m[01;32mgroup26parser.out[0m  parser.cpp  ,parserOutput.txt  partBtest1  partBtest3  partBtest5  partCtest1  partCtest3  partCtest5  partECtest7  scanner.cpp
+correctoutput6  OutputEC.txt       parser.h    parserWork.txt     partBtest2  partBtest4  partBtest6  partCtest2  partCtest4  partCtest6  @readMe      scanner.h
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./group26parser.out 
+Enter the input file name: partBtst1
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: watashi
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: watashi
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: sensei
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: rika
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: gohan
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: o
+Matched: OBJECT
+
+Processing <AfterObject()>
+Scanner called using word: tabE
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: masu
+Matched: VERB
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: watashi
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: tesuto
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: o
+Matched: OBJECT
+
+Processing <AfterObject()>
+Scanner called using word: seito
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: ni
+Matched: DESTINATION
+
+Processing <Verb()>
+Scanner called using word: agE
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: shikashi
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: seito
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: yorokobI
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: masendeshita
+Matched: VERBPASTNEG
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: dakara
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: kanashii
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: deshita
+
+Processing <Be()>
+Matched: WAS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: soshite
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: rika
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: toire
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: ni
+Matched: DESTINATION
+
+Processing <Verb()>
+Scanner called using word: ikI
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: rika
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: nakI
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: eofm
+
+succesfully parsed <Story>
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ clear
+[3;J[H[2J]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ls
+correctoutput1  [0m[01;32mgroup26parser.out[0m  parser.cpp  ,parserOutput.txt  partBtest1  partBtest3  partBtest5  partCtest1  partCtest3  partCtest5  partECtest7  scanner.cpp
+correctoutput6  OutputEC.txt       parser.h    parserWork.txt     partBtest2  partBtest4  partBtest6  partCtest2  partCtest4  partCtest6  @readMe      scanner.h
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./group26parser.out 
+Enter the input file name: partBtest2
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: soshite
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: ne
+SYNTAX ERROR: Expected PERIOD but found ne
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./pagroup26parser.out 
+Enter the input file name: partBtest3
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: dakara
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: de
+SYNTAX ERROR: Expected SUBJECT but found de
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./group26parser.out 
+Enter the input file name: partBtest4
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: watashi
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: mashita
+SYNTAX ERROR: unexpected mashita found in parser function <After Noun>
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./group26parser.out 
+Enter the input file name: partBtest5
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: wa
+
+Processing <Noun()>
+SYNTAX ERROR: unexpected wa found in parser function <Noun>
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ ./group26parser.out 
+Enter the input file name: partBtest6
+
+Processing <Story()>
+
+Processing <S()>
+
+Lexical error: apple is not a valid token
+Scanner called using word: apple
+
+Processing <Noun()>
+SYNTAX ERROR: unexpected apple found in parser function <Noun>
+]0;rasga001@empress:~/cs421Progs/ParserFiles[rasga001@empress ParserFiles]$ exit
+exit
+
+Script done on Mon 01 May 2023 02:04:48 PM PDT

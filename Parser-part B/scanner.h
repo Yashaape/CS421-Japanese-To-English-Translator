@@ -5,10 +5,9 @@
 #define SCANNER_H
 #include <string>
 enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
-extern tokentype reservedWordTT[30];
-extern std::string reservedWord[30][2];
+extern tokentype reservedWordTT[20];
+extern std::string reservedWord[20][2];
 extern std::string tokenName[30];
-extern std::ifstream fin;
 
 
 bool word(std::string s);

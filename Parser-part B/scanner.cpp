@@ -11,7 +11,7 @@ using namespace std;
 //=====================================================
 //enum tokentype {WORD1, WORD2, PERIOD, ERROR, VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, EOFM};
 string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "ERROR", "VERB", "VERBNEG", "VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "EOFM"}; 
-string reservedWord[30][2] = {
+string reservedWord[20][2] = {
         {"masu",         ""},
         {"masen",        ""},
         {"mashita",      ""},
@@ -21,19 +21,19 @@ string reservedWord[30][2] = {
         {"o",            ""},
         {"wa",           ""},
         {"ni",           ""},
-        {"watashi",      "I/me"},
-        {"anata",        "you"},
-        {"kare",         "he/him"},
-        {"kanojo",       "she/her"},
-        {"sore",         "it"},
-        {"mata",         "Also"},
-        {"soshite",     "Then"},
-        {"shikashi",   "However"},
-        {"dakara", "Therefore"},
+        {"watashi",      ""},
+        {"anata",        ""},
+        {"kare",         ""},
+        {"kanojo",       ""},
+        {"sore",         ""},
+        {"mata",         ""},
+        {"soshite",     ""},
+        {"shikashi",   ""},
+        {"dakara", ""},
         {"eofm", ""}
 
 };
-tokentype reservedwordTT[30] = {
+tokentype reservedwordTT[20] = {
         VERB,
         VERBNEG,
         VERBPAST,

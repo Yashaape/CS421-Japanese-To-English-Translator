@@ -17,438 +17,182 @@ using namespace std;
 //       (q0|qy), 0, q0, qc, qs, qt, qy, qy, qsa
 //       *Each of these are the regular expressions for our transistion functions from our NFA to DFA diagram  
 // @param: s, checks each letter in a given word using switch statements for 7 cases inside a while loop.
-
 bool word(string s) { // check to see if this dfa matches our diagram
-
-  int state = 0;
-
-  int charpos = 0;
-
-  // char lastchar = s[s.length()-1];
-
-  // char firstchar = s[0];
-
-  // if (firstchar == 'O'){
-
-  //     return false;
-
-  // }
-
-  // if (lastchar == '*'){
-
-  //     return false;
-
-  // }
-
-  //replace the following todo the word dfa  
-
-  while (s[charpos] != '\0') {
-
-    switch (state) {
-
-    case 0://q0
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1; //q0q1
-
-	break;
-
-      case 'b':
-
-      case 'g':
-
-	if (s.substr(charpos, 4) == "give") {
-
-	  return false; // lexical error for "give"
-
-	} else {
-
-	  state = 2; // Qy
-
-	  break;
-
-	}
-
-      case 'h':
-
-      case 'k':
-
-      case 'm':
-
-      case 'n':
-
-      case 'p':
-
-      case 'r':
-
-	state = 2;//Qy
-
-	break;
-
-      case 'c':
-
-	state = 3;//Qc
-
-	break;
-
-      case 'd':
-
-      case 'j':
-
-      case 'w':
-
-      case 'y':
-
-      case 'z':
-
-	state = 4;//Qsa
-
-	break;
-
-      case 's':
-
-	state = 5;//Qs
-
-	break;
-
-      case 't':
-
-	state = 6;//Qt
-
-	break;
-
-      default:
-
-	return false;
-
-      }
-
-      break;
-
-    case 1: //Q0Qy
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1;//Q0
-
-	break;
-
-      case 'b':
-
-      case 'g':
-
-      case 'h':
-
-      case 'k':
-
-      case 'm':
-
-      case 'p':
-
-      case 'r':
-
-	state = 2;//Qy
-
-	break;
-
-      case 'c':
-
-	state = 3;//Qc
-
-	break;
-
-      case 'd':
-
-      case 'j':
-
-      case 'w':
-
-      case 'y':
-
-      case 'z':
-
-	state = 4;//Qsa
-
-	break;
-
-      case 's':
-
-	state = 5;//Qs
-
-	break;
-
-      case 't':
-
-	state = 6;//Qt
-
-	break;
-
-      case 'n':
-
-	state = 7;//Q0Qy
-
-	break;
-
-      default:
-
-	return false;
-
-      }
-
-      break;
-
-    case 2://qy
-
-      switch (s[charpos]) {
-
-      case 'y':
-
-	state = 4;
-
-	break;
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1;
-
-	break;
-
-      default:
-
-	return false;
-
-      }
-
-      break;
-
-    case 3://Qc
-
-      switch (s[charpos]) {
-
-      case 'h':
-
-	state = 4;
-
-	break;
-
-      default: 
-
-	return false;
-
-      }
-
-      break;
-
-    case 4://Qsa
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1;
-
-	break;
-
-      default: 
-
-	return false;
-
-      }
-
-      break;
-
-    case 5://Qs
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1;
-
-	break;
-
-      case 'h':
-
-	state = 4;
-
-	break;
-
-      default:
-
-	return false;
-
-      }
-
-      break;
-
-    case 6://qt
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-
-	state = 1;
-
-	break;
-
-      case 's':
-
-	state = 5;//Qsa
-
-	break;
-
-      default:
-
-	return false;
-
-      }
-
-      break;
-
-    case 7: //q0q1
-
-      switch (s[charpos]) {
-
-      case 'a':
-
-      case 'e':
-
-      case 'E':
-
-      case 'i':
-
-      case 'I':
-
-      case 'o':
-
-      case 'u':
-	state = 1;
-	break;
-      case 'b':
-      case 'g':
-      case 'h':
-      case 'k':
-      case 'm':
-      case 'n':
-      case 'p':
-      case 'r':
-	state = 2;//Q0Qy
-	break;
-      case 'c':
-	state = 3;
-	break;
-      case 'd':
-      case 'j':
-      case 'w':
-      case 'y':
-      case 'z':
-	state = 4;
-	break;
-
-      case 's':
-
-	state = 5;
-
-	break;
-
-      case 't':
-
-	state = 6;
-
-      default:
-
-	return false;
-
-	//break;
-
-      }
-
-      //return false;
-
-      break;
+    int state = 0;
+    int charpos = 0;
+    //replace the following todo the word dfa  
+    while (s[charpos] != '\0') {
+        switch (state) {
+            case 0://q0
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        state = 7; //q0q1
+                        break;
+                    case 'b':
+                    case 'g':
+                    case 'h':
+                    case 'k':
+                    case 'm':
+                    case 'n':
+                    case 'p':
+                    case 'r':
+                        state = 2;//Qy
+                        break;
+                    case 'c':
+                        state = 3;//Qc
+                        break;
+                    case 'd':
+                    case 'j':
+                    case 'w':
+                    case 'y':
+                    case 'z':
+                        state = 4;//Qsa
+                        break;
+                    case 's':
+                        state = 5;//Qs
+                        break;
+                    case 't':
+                        state = 6;//Qt
+                        break;
+                }
+                break;
+            case 1: //Q0Qy
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;//Q0
+                        break;
+                    case 'b':
+                    case 'g':
+                    case 'h':
+                    case 'k':
+                    case 'm':
+                    case 'p':
+                    case 'r':
+                        state = 2;//Qy
+                        break;
+                    case 'c':
+                        state = 3;//Qc
+                        break;
+                    case 'd':
+                    case 'j':
+                    case 'w':
+                    case 'y':
+                    case 'z':
+                        state = 4;//Qsa
+                        break;
+                    case 's':
+                        state = 5;//Qs
+                        break;
+                    case 't':
+                        state = 6;//Qt
+                        break;
+                    case 'n':
+                        state = 1;//Q0Qy
+                        break;
+                }
+                break;
+            case 2://qy
+                switch (s[charpos]) {
+                    case 'y':
+                        state = 4;
+                        break;
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 7;
+                        break;
+                }
+                break;
+            case 3://Qc
+                switch (s[charpos]) {
+                    case 'h':
+                        state = 4;
+                        break;
+                }
+                break;
+            case 4://Qsa
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 1;
+                        break;
+                }
+                break;
+            case 5://Qs
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 7;
+                        break;
+                    case 'h':
+                        state = 4;
+                        break;
+                }
+                break;
+            case 6://qt
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 7;
+                        break;
+                    case 's':
+                        state = 4;//Qsa
+                        break;
+                }
+                break;
+            case 7: //q0q1
+                switch (s[charpos]) {
+                    case 'a':
+                    case 'e':
+                    case 'E':
+                    case 'i':
+                    case 'I':
+                    case 'o':
+                    case 'u':
+                        state = 7;
+                        break;
+                    case 'n':
+                        state = 1;//Q0Qy
+                        break;
+                    default:
+                        break;
+                }
+        }
+        charpos++;
     }
-    charpos++;
-  }
-  if (state == 1 || state == 7) return (true);  // end in a final state
-  else return (false);
+    if (state == 1 || state == 7) return (true);  // end in a final state
+    else return (false);
 }
+
 // PERIOD DFA 
 // Done by: Brandon Rasgaitis
 // @param: s, reads in a '.' as a string and returns the correct state

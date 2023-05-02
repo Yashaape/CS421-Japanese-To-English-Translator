@@ -3,6 +3,7 @@
 #include<string>
 #include "scanner.h"
 #include "parser.h"
+#include "translator.h"
 using namespace std;
 
 /* INSTRUCTION:  Complete all ** parts.
@@ -95,9 +96,13 @@ void S(){
    if(next_token() == CONNECTOR){
       match(CONNECTOR);
       cout << "Matched: " << tokenName[CONNECTOR] << endl;
+      getEword();
+      gen(tokenName[CONNECTOR]);
    }
    Noun();
+   getEword();
    match(SUBJECT);
+   gen("Actor");
    cout << "Matched: " << tokenName[SUBJECT] << endl;
    AfterSubject();
 }
@@ -127,17 +132,22 @@ void AfterSubject(){
    cout << "Processing <AfterSubject()>" << endl;
    switch(next_token()){
       case WORD2: 
-         Verb(); 
+         Verb();
+         getEword();
+         gen("ACTION"); 
          Tense(); 
+         gen("TENSE");
          match(PERIOD); 
          cout << "Matched: "<< tokenName[PERIOD] << endl;
          break;
       case WORD1: 
          Noun(); 
+         getEword();
          AfterNoun();
          break;
       case PRONOUN: 
          Noun(); 
+         getEword();
          AfterNoun();
          break;
       default: 
@@ -153,20 +163,27 @@ void AfterNoun(){
       case IS:
       case WAS: 
          Be(); 
+         gen("DESCRIPTION");
+         gen("TENSE");
          match(PERIOD); 
          cout << "Matched: "<< tokenName[PERIOD] << endl; 
          break;
       case DESTINATION: 
          match(DESTINATION); 
-         cout << "Matched: " << tokenName[DESTINATION] << endl; 
+         cout << "Matched: " << tokenName[DESTINATION] << endl;
+         gen("TO");
          Verb(); 
-         Tense(); 
+         getEword();
+         gen("ACTION");
+         Tense();
+         gen("TENSE"); 
          match(PERIOD); 
          cout << "Matched: "<< tokenName[PERIOD] << endl; 
          break;
       case OBJECT: 
          match(OBJECT); 
          cout << "Matched: " <<  tokenName[OBJECT] << endl; 
+         gen("OBJECT");
          AfterObject(); 
          break;
       default: 
@@ -182,17 +199,25 @@ void AfterObject(){
    switch(next_token()){
       case WORD2: 
          Verb(); 
+         getEword();
+         gen("ACTION");
          Tense(); 
+         gen("TENSE");
          match(PERIOD); 
          cout << "Matched: "<< tokenName[PERIOD] << endl;
          break;
       case WORD1:
       case PRONOUN: 
          Noun(); 
+         getEword();
          match(DESTINATION); 
          cout << "Matched: " << tokenName[DESTINATION] << endl; 
+         gen("TO");
          Verb(); 
+         getEword();
+         gen("ACTION");
          Tense(); 
+         gen("TENSE");
          match(PERIOD); 
          cout << "Matched: "<< tokenName[PERIOD] << endl; 
          break;
@@ -274,26 +299,26 @@ void Tense(){
    }
 }
 //----------- Driver ---------------------------
-string filename;
-extern ifstream fin;
+//string filename;
+//extern ifstream fin;
 
 // The new test driver to start the parser
 // Done by:  Sebastian Rojas
-int main(){
-   cout << "Enter the input file name: ";
-   cin >> filename;
-   fin.open(filename.c_str());
+// int main(){
+//    cout << "Enter the input file name: ";
+//    cin >> filename;
+//    fin.open(filename.c_str());
 
-   //** calls the <story> to start parsing
-   Story();
-   cout << endl;
-   if(error1 == false && error2 == false){
-      cout << "succesfully parsed <Story>" << endl;
-   }
-   //** closes the input file 
-   fin.close();
-   return 0;
-}// end
+//    //** calls the <story> to start parsing
+//    Story();
+//    cout << endl;
+//    if(error1 == false && error2 == false){
+//       cout << "succesfully parsed <Story>" << endl;
+//    }
+//    //** closes the input file 
+//    fin.close();
+//    return 0;
+// }// end
 //** require no other input files!
 //** syntax error EC requires producing errors.txt of error messages
 //** tracing On/Off EC requires sending a flag to trace message output functions
