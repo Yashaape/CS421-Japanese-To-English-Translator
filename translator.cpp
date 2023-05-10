@@ -15,7 +15,7 @@ using namespace std;
 */
 
 //=================================================
-// File translator.cpp written by Group Number: **
+// File translator.cpp written by Group Number: 26
 //=================================================
 
 // ----- Additions to the parser.cpp ---------------------
@@ -23,12 +23,12 @@ using namespace std;
 // ** Declare Lexicon (i.e. dictionary) that will hold the content of lexicon.txt
 // Make sure it is easy and fast to look up the translation.
 // Do not change the format or content of lexicon.txt 
-//  Done by: ** 
+//  Done by: Alex Sandoval 
 map<string, string> Lexicon;
 string savedEword;
 
 // ** Additions to parser.cpp here:
-//  Done by: **
+//  Done by: Brandon Rasgaitis
 //    getEword() - using the current saved_lexeme, look up the English word
 //                 in Lexicon if it is there -- save the result   
 //                 in saved_E_word
@@ -188,7 +188,7 @@ void getEword(){
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
-//  Done by: ** 
+//  Done by: Brandon Rasgaitis 
 void gen(string line_type){
   if(line_type != "TENSE"){
     translated_file << line_type << ": " << savedEword << endl;
@@ -219,7 +219,7 @@ ofstream translated_file;
 ifstream infile;
 
 // The final test driver to start the translator
-// Done by:  Brandon Rasgaitis
+// Done by:  Alex Scandoval
 int main()
 {
   //** opens the lexicon.txt file and reads it into Lexicon
