@@ -263,9 +263,6 @@ void Noun(){
 
 // Grammar: <verb>  ::= WORD2
 // Done by: Sebastian Rojas
-
-// Updated Grammar:
-// Done by: Sebastian Rojas
 void Verb(){
    cout << endl;
    cout << "Processing <Verb()>" << endl;
@@ -276,7 +273,7 @@ void Verb(){
 // Grammar: <be>  ::= IS | WAS
 // Done by: Sebastian Rojas
 
-// Updated Grammar: Test Git Test Git
+// Updated Grammar:
 // Done by: Sebastian Rojas
 void Be(){
    cout << endl;
@@ -296,9 +293,6 @@ void Be(){
 }
 
 // Grammar: <tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG 
-// Done by: Sebastian Rojas
-
-// Updated Grammar:
 // Done by: Sebastian Rojas
 void Tense(){
    cout << endl;
