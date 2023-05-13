@@ -90,7 +90,7 @@ bool match(tokentype expected){
 // Original Grammar: <s> ::= [CONNECTOR] <noun> SUBJECT <after subject>
 // Done by: Sebastian Rojas, Brandon Rasgaitis
 
-// Updated Grammar:
+// Updated Grammar: <s> ::= [CONNECTOR #getEword# #gen(“CONNECTOR”)#] <noun>#getEword# SUBJECT #gen(“ACTOR”)# <after subject>
 // Done by: Sebastian Rojas
 void S(){
    cout << endl;
@@ -109,10 +109,10 @@ void S(){
    AfterSubject();
 }
 
-// Grammar:
+// Grammar: <story>  ::= <s> { <s> } 
 // Done by: Brandon Rasgaitis
 
-// Updated Grammar:
+// Updated Grammar: NA
 // Done by: Sebastian Rojas
 void Story(){ //statement_list() from notes 
    cout << endl;
@@ -133,7 +133,7 @@ void Story(){ //statement_list() from notes
 // Grammar: <after subject> ::= <verb> <tense> PERIOD | <noun> <after noun>
 // Done by: Brandon Rasgaitis
 
-// Updated Grammar:
+// Updated Grammar: <after subject> ::= <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | <noun> #getEword# <after noun>
 // Done by: Sebastian Rojas
 void AfterSubject(){
    cout << endl;
@@ -165,7 +165,8 @@ void AfterSubject(){
 // Grammar: <after noun> ::= <be> PERIOD | DESTINATION <verb> <tense> PERIOD| OBJECT <after object>
 // Done by: Brandon Rasgaitis
 
-// Updated Grammar:
+// Updated Grammar: <after noun> ::= <be> #gen(“DESCRIPTION”)# #gen(“TENSE”)# PERIOD | DESTINATION
+//                  #get(“TO”)# <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | OBJECT #gen(“OBJECT”)# <after object>
 // Done by: Sebastian Rojas
 void AfterNoun(){
    cout << endl;
@@ -205,7 +206,8 @@ void AfterNoun(){
 // Grammar: <after object> ::= <verb> <tense> PERIOD | <noun> DESTINATION <verb> <tense> PERIOD
 // Done by: Sebastian Rojas
 
-// Updated Grammar:
+// Updated Grammar: <after object> ::= <verb> #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD | <noun> #getEword# DESTINATION #gen(“TO”)# <verb>
+//                  #getEword# #gen(“ACTION”)# <tense> #gen(“TENSE”)# PERIOD
 // Done by: Sebastian Rojas
 void AfterObject(){
    cout << endl;
@@ -243,7 +245,7 @@ void AfterObject(){
 // Grammar: <noun>  ::= WORD1 | PRONOUN
 // Done by: Sebastian Rojas
 
-// Updated Grammar:
+// Updated Grammar: NA
 // Done by: Sebastian Rojas
 void Noun(){
    cout << endl;
@@ -263,6 +265,9 @@ void Noun(){
 
 // Grammar: <verb>  ::= WORD2
 // Done by: Sebastian Rojas
+
+// Updated Grammar: NA
+// Done by: Sebastian Rojas
 void Verb(){
    cout << endl;
    cout << "Processing <Verb()>" << endl;
@@ -273,7 +278,7 @@ void Verb(){
 // Grammar: <be>  ::= IS | WAS
 // Done by: Sebastian Rojas
 
-// Updated Grammar:
+// Updated Grammar: NA
 // Done by: Sebastian Rojas
 void Be(){
    cout << endl;
@@ -293,6 +298,9 @@ void Be(){
 }
 
 // Grammar: <tense>  ::= VERBPAST  | VERBPASTNEG | VERB | VERBNEG 
+// Done by: Sebastian Rojas
+
+// Updated Grammar: NA
 // Done by: Sebastian Rojas
 void Tense(){
    cout << endl;

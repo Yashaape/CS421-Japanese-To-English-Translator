@@ -14,15 +14,9 @@ do not list his/her name!!!!!
    functions         who
    -------------  ---------
    void S()       Sebastian Rojas
-   void Story()   Sebastian Rojas
    void AfterSubject()  Sebastian Rojas
    void AfterNoun()  Sebastian Rojas
    void AfterObject()   Sebastian Rojas
-   void Noun()    Sebastian Rojas
-   void Verb()    Sebastian Rojas
-   void Be()      Sebastian Rojas
-   void Tense()   Sebastian Rojas
-
   
 
 2. Who came to the meeting to put together the work? Brandon Rasgaitis,
