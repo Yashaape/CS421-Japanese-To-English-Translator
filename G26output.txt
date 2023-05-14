@@ -1,0 +1,1858 @@
+Script started on Sat 13 May 2023 08:51:54 PM PDT
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[?1034h[rasga001@empress TranslatorFiles]$ logous/cs/recordhw_LK scannerOutput.txlscd ScannerFilelscd .[3Pcleamore parserOutput.txlscd ParserFileslscd .[3Pmore correctoutputlscleamore scannertestlscd ScannerFilelscd .[3Pcd ParserFileslscd .[3Pcd ScannerFilelsmore scannertestclear[[3Pmore correctoutputlscd .[3Pcd ParserFileslsmore parserOutput.txclear[[3Pcd .[3Pcd ScannerFilels/cs/recordhw_LK scannerOutput.txls[ogo[Klogous/cs/recordhw_LK scannerOutput.txls/cs/recordhw_LK scannerOutput.txlscd ScannerFilelscd .[3Pcleamore parserOutput.txlscd ParserFileslscd .[3Pmore correctoutputlscleamore scannertestlscd ScannerFilelscd .[3Pcd ParserFileslscd .[3Pcd cs421Progs/ScannerFilesexit./a.ou[3Pexcd cs421Progs/ScannerFilesexit./a.oug++ scanner.cp[9Plogo/cs/submitIt_LK G26  parserWork.tx[15Pemacs[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls/cs/submitIt_LK G26  group26parser.o[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4@k G26[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsemacs parserOutput.tclear[[3P/cs/recordhw_LK parserOutput.tx[lscleaemacs parser.clscd cs421Progs/ParserFileexit./group26parser.oulsclea./group26parser.oulsg++ -std=c++11 parser.cpp scanner.cpp -o group26parser.ou[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clogoutmore parser.cp[1@emacs[C[C[C[C[C[C[C[C[C[C[1Pmore[C[C[C[C[C[C[C[C[C[C[[9Plogog++ parser.cpp scanner.cpp -o group26parser.out[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10@-std=c+11 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[[1P.ou[1P.ou[1P.ou[1P.ou[1P.ou[1P.ot.or.oa.on.os.ol.oa.ot.oo.or.ou[C[C[1@[1@t[1@r[1@a[5@nslat[1@o[1@r[1@.[1@c[2@pp
+g++: error: unrecognized command line option ‘-std=c+11’
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ g++[[[[Kg++ -std=c++11 translator.cpp parser.cpp scanner.cpp -o group26translator
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ls
+,G26output.txt     lexicon.txt  parser.h    partCtest2  partCtest4  partCtest6   projectWork.txt  reservedwords.txt  scanner.h     translated.txt  translator.cpp
+[0m[01;32mgroup26translator[0m  parser.cpp   partCtest1  partCtest3  partCtest5  partECtest7  @readMe          scanner.cpp        test1results  translator      translator.h
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ clear
+[3;J[H[2J]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ls
+,G26output.txt     lexicon.txt  parser.h    partCtest2  partCtest4  partCtest6   projectWork.txt  reservedwords.txt  scanner.h     translated.txt  translator.cpp
+[0m[01;32mgroup26translator[0m  parser.cpp   partCtest1  partCtest3  partCtest5  partECtest7  @readMe          scanner.cpp        test1results  translator      translator.h
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCte	test1
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: watashi
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: watashi
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: sensei
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: rika
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: gohan
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: o
+Matched: OBJECT
+
+Processing <AfterObject()>
+Scanner called using word: tabE
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: masu
+Matched: VERB
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: watashi
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: tesuto
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: o
+Matched: OBJECT
+
+Processing <AfterObject()>
+Scanner called using word: seito
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: ni
+Matched: DESTINATION
+
+Processing <Verb()>
+Scanner called using word: agE
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: shikashi
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: seito
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: yorokobI
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: masendeshita
+Matched: VERBPASTNEG
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: dakara
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: kanashii
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: deshita
+
+Processing <Be()>
+Matched: WAS
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: soshite
+
+Processing <S()>
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: rika
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: toire
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: ni
+Matched: DESTINATION
+
+Processing <Verb()>
+Scanner called using word: ikI
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: rika
+
+Processing <S()>
+
+Processing <Noun()>
+Matched: WORD1
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: nakI
+
+Processing <Verb()>
+Matched: WORD2
+
+Processing <Tense()>
+Scanner called using word: mashita
+Matched: VERBPAST
+Scanner called using word: .
+Matched: PERIOD
+Scanner called using word: eofm
+
+succesfully parsed <Story>
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ clear
+[3;J[H[2J]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ls
+,G26output.txt     lexicon.txt  parser.h    partCtest2  partCtest4  partCtest6   projectWork.txt  reservedwords.txt  scanner.h     translated.txt  translator.cpp
+[0m[01;32mgroup26translator[0m  parser.cpp   partCtest1  partCtest3  partCtest5  partECtest7  @readMe          scanner.cpp        test1results  translator      translator.h
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.txt 
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+Actor: I/me[K
+DESCRIPTION: rika[K
+TENSE: IS[K
+Actor: I/me[K
+DESCRIPTION: teacher[K
+TENSE: IS[K
+Actor: rika[K
+OBJECT: meal[K
+ACTION: eat[K
+TENSE: VERB[K
+Actor: I/me[K
+OBJECT: test[K
+TO: student[K
+ACTION: give[K
+TENSE: VERBPAST[K
+CONNECTOR: However[K
+Actor: student[K
+ACTION: enjoy[K
+TENSE: VERBPASTNEG[K
+CONNECTOR: Therefore[K
+Actor: I/me[K
+DESCRIPTION: sad[K
+TENSE: WAS[K
+CONNECTOR: Then[K
+Actor: rika[K
+TO: restroom[K
+ACTION: go[K
+TENSE: VERBPAST[K
+Actor: rika[K
+ACTION: cry[K
+TENSE: VERBPAST[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCtest2
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: soshite
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: desu
+
+Processing <Be()>
+Matched: IS
+Scanner called using word: ne
+SYNTAX ERROR: Expected PERIOD but found ne
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translat.txt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25l(New file)[K[H
+[?12l[?25h[?12;25h[105d[?25l(New file)[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1mtranslat.txt[0m[39;49m[27m[7m   All L1     (Text) ---------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+CONNECTOR: Then[K
+Actor: I/me[K
+DESCRIPTION: rika[K
+TENSE: IS[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCtest3
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: dakara
+Matched: CONNECTOR
+
+Processing <Noun()>
+Scanner called using word: watashi
+Matched: PRONOUN
+Scanner called using word: de
+SYNTAX ERROR: Expected SUBJECT but found de
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+CONNECTOR: Therefore[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCtest4
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: watashi
+
+Processing <Noun()>
+Matched: PRONOUN
+Scanner called using word: wa
+Matched: SUBJECT
+
+Processing <AfterSubject()>
+Scanner called using word: rika
+
+Processing <Noun()>
+Matched: WORD1
+
+Processing <AfterNoun()>
+Scanner called using word: mashita
+SYNTAX ERROR: unexpected mashita found in parser function <After Noun>
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+Actor: I/me[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCtest5
+
+Processing <Story()>
+
+Processing <S()>
+Scanner called using word: wa
+
+Processing <Noun()>
+SYNTAX ERROR: unexpected wa found in parser function <Noun>
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.txt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ ./group26translator 
+Enter the input file name: partCtest6
+
+Processing <Story()>
+
+Processing <S()>
+
+Lexical error: apple is not a valid token
+Scanner called using word: apple
+
+Processing <Noun()>
+SYNTAX ERROR: unexpected apple found in parser function <Noun>
+]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ emacs translated.t[Kxt
+[?1049h[?12;25h[?1h=[H[2J[105d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[104d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental) --------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/cmake3-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;75H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25ldesktop-entry-mode-init.el (source)...[H
+[?12l[?25h[?12;25h[105;87H[?25ldone[H
+[?12l[?25h[?12;25h[105;49H[?25lsystemtap-init.el (source)...[K[H
+[?12l[?25h[?12;25h[105;78H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[105d[?25lLoading /usr/share/emacs/site-lisp/site-start.d/systemtap-init.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                                                                                                                                              [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction) ---------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H
+[?12l[?25h[?12;25h[105d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[K[H[7mFile Edit Options Buffers Tools Help                                                                                                                                                                               [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1mtranslated.txt[0m[39;49m[27m[7m   All L1     (Text) -------------------------------------------------------------------------------------------------------------------------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[105d[K[2d[105d[?25l(No files need saving)[H
+[?12l[?25h[?12;25h[105d[K[?1l>[?12l[?25h[?1049l[39;49m]0;rasga001@empress:~/cs421Progs/TranslatorFiles[rasga001@empress TranslatorFiles]$ exit
+exit
+
+Script done on Sat 13 May 2023 08:57:56 PM PDT
